@@ -3,7 +3,7 @@ import React from "react";
 import { DayDetails, DayPaper, WeatherImage } from "../styles";
 
 const Day = ({ item }) => {
-  console.log("day");
+  // console.log("day");
   return (
     <DayPaper elevation={5}>
       <Typography>{new Date(item.dt*1000).toDateString()}</Typography>

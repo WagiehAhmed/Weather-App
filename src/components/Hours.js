@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const Hours = ({ hours }) => {
-  console.log("hours");
+  // console.log("hours");
 
   
   // language hook

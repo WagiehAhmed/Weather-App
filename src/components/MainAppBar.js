@@ -17,7 +17,7 @@ import {
 import { Box, InputAdornment, Typography } from "@mui/material";
 
 const MainAppBar = ({ searchHandler, cityName, setCityName, matches }) => {
-  console.log("mainAppbar");
+  // console.log("mainAppbar");
 
   // search dialog trigger
   const [openDialog, setOpenDialog] = useState(false);

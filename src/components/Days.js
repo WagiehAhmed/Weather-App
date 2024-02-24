@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import { Title } from "../styles";
 
 const Days = ({ days }) => {
-  console.log("days");
+  // console.log("days");
 
   // language hook
   const { t } = useTranslation();

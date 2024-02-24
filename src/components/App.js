@@ -34,7 +34,7 @@ import Hours from "./Hours";
 import { useTranslation } from "react-i18next";
 
 function App() {
-  console.log("app");
+  // console.log("app");
 
   // defferent screens matchers
   const sizes = {
@@ -75,7 +75,6 @@ function App() {
   const searchHandler = (e) => {
     e.preventDefault();
     fetchToDayWeather(cityName);
-    console.log(toDayWeather);
     setCityName("");
     // console.log(nextSevenDaysWeather);
   };
@@ -122,12 +121,12 @@ function App() {
                       />
                       <TempDegree matches={sizes}>
                         {toDayWeather ? (
-                          <Typography variant="h3">
+                          <Typography variant="h3" component="h3">
                             {Math.floor(toDayWeather.main.temp - 273.15)}{" "}
                             &#8451; 
                           </Typography>
                         ) : (
-                          <Typography variant="h3">
+                          <Typography variant="h3" component="h3">
                             {Math.floor(currentWeather.current.temp - 273.15)}{" "}
                             &#8451; 
                           </Typography>

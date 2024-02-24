@@ -31,7 +31,6 @@ export const useFetch = () => {
       }
       if (toDayResponse.ok) {
         settoDayWeather(toDayJson);
-        console.log("toDayWeather", toDayJson);
       }
       if(toDayJson.coord){
         try {
@@ -47,12 +46,10 @@ export const useFetch = () => {
           if (nextSevenDaysResponse.ok) {
             setDaily(nextSevenDaysJson.daily);
             setHourly(nextSevenDaysJson.hourly);
-            console.log("nextSevenDaysWeather", nextSevenDaysJson);
           }
         } catch (err) {
           alertDispatch({type:"ERROR",message:err.message})
           setError(err.message);
-          console.log(err);
         }
         setLoading(false);
       }
@@ -60,7 +57,6 @@ export const useFetch = () => {
     } catch (err) {
       alertDispatch({type:"ERROR",message:err.message})
       setError(err.message);
-      console.log(err);
     }
     setLoading(false);
   };
@@ -80,12 +76,10 @@ export const useFetch = () => {
         setCurrentWeather(currentJson);
         setDaily(currentJson.daily);
         setHourly(currentJson.hourly);
-        console.log("currentWeather", currentJson);
       }
     } catch (err) {
       alertDispatch({type:"ERROR",message:err.message})
       setError(err.message);
-      console.log(err);
     }
     setLoading(false);
   };

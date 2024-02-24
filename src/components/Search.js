@@ -10,7 +10,7 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 
 const Search = ({ openDialog, dialogTriggerhandler ,searchHandler , cityName , setCityName, matches }) => {
-  console.log("search");
+  // console.log("search");
 
    //search handler
    const mobileSearchHandler = (e) => {

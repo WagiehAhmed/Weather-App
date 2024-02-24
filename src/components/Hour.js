@@ -3,7 +3,7 @@ import React from "react";
 import { HourData, HourPaper, WeatherImage } from "../styles";
 
 const Hour = ({item}) => {
-  console.log("hour");
+  // console.log("hour");
 const d = new Date(item.dt*1000)
 let hours = d.getHours();
 let hoursIn12HrFormatV = hours >= 13 ? hours % 12 : hours;

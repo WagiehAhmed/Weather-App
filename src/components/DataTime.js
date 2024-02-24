@@ -8,7 +8,7 @@ import {
 } from "../styles";
 
 const DataTime = ({ matches }) => {
-  console.log("dataTime");
+  // console.log("dataTime");
 
   //date and time needed states
   const [hours, setHours] = useState(null);
