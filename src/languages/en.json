@@ -1,0 +1,11 @@
+{
+    "title":"weather app",
+    "searchPlaceholder":"search by city name",
+    "currentWeather":"current weather",
+    "nextEightDayWeather":"next eight day weather",
+    "toDayHoursWeather":"today hours weather",
+    "humidity":"humidity",
+    "pressure":"pressure",
+    "wind":"wind",
+    "clouds":"clouds"
+}

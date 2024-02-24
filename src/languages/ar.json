@@ -1,0 +1,11 @@
+{
+    "title":"الطقس",
+    "searchPlaceholder":"أبحث باسم المدينة",
+    "currentWeather":"الطقس الحالي",
+    "nextEightDayWeather":"طقس الثماني ايام القادمة",
+    "toDayHoursWeather":"طقس خلال ساعات اليوم",
+    "humidity":"الرطوبة",
+    "pressure":"الضغط",
+    "wind":"الرياح",
+    "clouds":"الغيوم"
+}
