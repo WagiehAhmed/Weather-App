@@ -66,9 +66,6 @@ export const CustomForm = styled("form")(({ matches }) => ({
   flexGrow: 1,
   minWidth: "250px",
   maxWidth: "500px",
-  // padding:"1px",
-  // backgroundColor:"white",
-  // borderRadius:"25px",
   "&.mobileSearch":{
     display: !matches.sm ? "none" : "flex",
   }
@@ -116,21 +113,16 @@ export const CustomContainer = styled(Box)(({ matches }) => ({
 //first section
 export const FirstSection = styled(Box)(({ matches }) => ({
   boxSizing: "border-box",
-  padding: "10px",
   display: "flex",
   flexDirection: matches.sm ? "column" : "row",
   justifyContent: "center",
-  // alignItems:"center",
+  alignItems:"center",
   // border: "2px solid red",
 }));
 
 export const Current = styled(Box)(({ matches }) => ({
   boxSizing: "border-box",
-  // background: "url(./images/rain.jpg)",
-  // backgroundRepeat: "no-repeat",
-  // backgroundSize: "cover",
-  // margin: "10px",
-  padding: "10px",
+  margin: "5px",
   color: "white",
   flexGrow: 1,
   maxWidth: matches.sm ? "100%" : "100%",
@@ -139,11 +131,7 @@ export const Current = styled(Box)(({ matches }) => ({
 
 export const Next = styled(Box)(({ matches }) => ({
   boxSizing: "border-box",
-  // background: "url(./images/rain.jpg)",
-  // backgroundRepeat: "no-repeat",
-  // backgroundSize: "cover",
-  // margin: "10px",
-  padding: "10px",
+  padding: "0px",
   color: "white",
   flexGrow: 1,
   maxWidth: matches.sm ? "100%" : "100%",
@@ -286,30 +274,8 @@ export const Zone = styled(Typography)(() => ({
 export const SecondSection = styled(Box)(({ matches }) => ({
   color: "white",
   boxSizing: "border-box",
-  padding: "10px",
   // border: "2px solid red",
 }));
-
-// export const Daily = styled(Box)(() => ({
-//   boxSizing: "border-box",
-//   color: "white",
-//   margin: "5px 0px",
-//   // display: "flex",
-//   // flexDirection: "row",
-//   // overflowX: "scroll",
-//   border: "2px solid green",
-// }));
-
-// export const Hourly = styled(Box)(() => ({
-//   boxSizing: "border-box",
-//   color: "white",
-//   marginBottom: "10px",
-//   margin: "5px 0px",
-//   // display: "flex",
-//   // flexDirection: "row",
-//   // overflowX: "scroll",
-//   border: "2px solid green",
-// }));
 
 export const DayDetails = styled(Box)(() => ({
   boxSizing: "border-box",
@@ -340,8 +306,9 @@ export const HourPaper = styled(Paper)(() => ({
   borderRadius: "10px",
   padding: "5px",
   margin: "10px",
-  maxWidth: "200px",
-  minWidth: "150px",
+  minWidth:"fit-content",
+  maxWidth: "150px",
+  margin: "10px auto",
   color: "white",
   backgroundColor: `rgba(50,91,150,0.5)`,
 }));
@@ -353,6 +320,7 @@ export const HourData = styled(Stack)(() => ({
 
 export const Title = styled(Typography)(() => ({
   textTransform:"capitalize",
+  margin:"5px",
   // border: "2px solid red",
 }));
 

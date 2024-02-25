@@ -67,7 +67,11 @@ function App() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((success) => {
       let { latitude, longitude } = success.coords;
-      fetchByLatAndLon(latitude, longitude);
+      if (latitude && longitude) {
+        fetchByLatAndLon(latitude, longitude);
+      } else {
+        fetchToDayWeather(cityName);
+      }
     });
   }, []);
 
@@ -122,22 +126,20 @@ function App() {
                       <TempDegree matches={sizes}>
                         {toDayWeather ? (
                           <Typography variant="h3" component="h3">
-                            {Math.floor(toDayWeather.main.temp - 273.15)}{" "}
-                            &#8451; 
+                            {Math.floor(toDayWeather.main.temp - 273.15)}
                           </Typography>
                         ) : (
-                          <Typography variant="h3" component="h3">
-                            {Math.floor(currentWeather.current.temp - 273.15)}{" "}
-                            &#8451; 
+                          <Typography variant="h3">
+                            {Math.floor(currentWeather.current.temp - 273.15)}
                           </Typography>
                         )}
                       </TempDegree>
-
+                      <Typography variant="h3">&#8451;</Typography>
                       <WeatherDescription matches={sizes}>
                         {toDayWeather
-                          ?toDayWeather.weather[0].main +" , "
-                          :currentWeather.current.weather[0].main +" , "}
-                        
+                          ? toDayWeather.weather[0].main + " , "
+                          : currentWeather.current.weather[0].main + " , "}
+
                         {toDayWeather
                           ? toDayWeather.weather[0].description
                           : currentWeather.current.weather[0].description}
