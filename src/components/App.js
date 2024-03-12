@@ -66,10 +66,11 @@ function App() {
   // first time
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((success) => {
-      let { latitude, longitude } = success.coords;
-      if (latitude && longitude) {
-        fetchByLatAndLon(latitude, longitude);
-      } else {
+      // let { latitude, longitude } = success.coords;
+      if (success) {
+        fetchByLatAndLon(success.coords.latitude, success.coords.longitude);
+      }
+      if (!success) {
         fetchToDayWeather(cityName);
       }
     });

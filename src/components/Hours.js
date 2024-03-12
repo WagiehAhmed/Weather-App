@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import Hour from "./Hour";
 import { Title } from "../styles";
@@ -8,11 +8,13 @@ import { useTranslation } from "react-i18next";
 const Hours = ({ hours }) => {
   // console.log("hours");
 
-  
   // language hook
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  
+  var dir;
+  useEffect(() => {
+    dir = i18n.dir(i18n.language);
+  }, [i18n, i18n.language]);
 
   //slider settings
   var settings = {
@@ -20,6 +22,7 @@ const Hours = ({ hours }) => {
     arrows: false,
     infinite: false,
     speed: 500,
+    rtl: dir === "rtl" ? true : false,
     slidesToShow: 6,
     slidesToScroll: 6,
     initialSlide: 0,
@@ -65,7 +68,7 @@ const Hours = ({ hours }) => {
 
   return (
     <Box>
-      <Title>{t("nextEightDayWeather")}</Title>
+      <Title>{t("toDayHoursWeather")}</Title>
       <Slider {...settings}>
         {hours.map((item) => (
           <Hour item={item} key={item.dt} />

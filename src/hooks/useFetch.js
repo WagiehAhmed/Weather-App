@@ -17,7 +17,7 @@ export const useFetch = () => {
   //api key
   const API_KEY = "49cc8c821cd2aff9af04c9f98c36eb74";
 
-  const fetchToDayWeather = async (city_name= "cairo") => {
+  const fetchToDayWeather = async (city_name = "cairo") => {
     //getting weather for today only
     try {
       setLoading(true);

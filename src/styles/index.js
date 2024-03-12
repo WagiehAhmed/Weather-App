@@ -117,6 +117,7 @@ export const FirstSection = styled(Box)(({ matches }) => ({
   flexDirection: matches.sm ? "column" : "row",
   justifyContent: "center",
   alignItems:"center",
+  padding:"5px",
   // border: "2px solid red",
 }));
 

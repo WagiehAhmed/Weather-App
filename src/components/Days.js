@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import Day from "./Day";
-import { useTranslation } from "react-i18next";
 import { Box } from "@mui/material";
 import { Title } from "../styles";
-
+import { useTranslation } from "react-i18next";
 const Days = ({ days }) => {
   // console.log("days");
 
   // language hook
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  var dir;
+  useEffect(() => {
+    dir = i18n.dir(i18n.language);
+  }, [i18n, i18n.language]);
   //slider settings
   var settings = {
     dots: false,
     arrows: false,
     infinite: false,
     speed: 500,
+    rtl: dir === "rtl" ? true : false,
     slidesToShow: 6,
     slidesToScroll: 6,
     initialSlide: 0,
@@ -58,12 +62,10 @@ const Days = ({ days }) => {
       },
     ],
   };
-  
 
-  
   return (
     <Box>
-      <Title>{t("toDayHoursWeather")}</Title> 
+      <Title>{t("nextEightDayWeather")}</Title>
       <Slider {...settings}>
         {days.map((item) => (
           <Day item={item} key={item.dt} />
