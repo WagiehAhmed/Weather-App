@@ -65,15 +65,27 @@ function App() {
 
   // first time
   useEffect(() => {
+
+    let sto;
     navigator.geolocation.getCurrentPosition((success) => {
       // let { latitude, longitude } = success.coords;
-      if (!success) {
-        fetchToDayWeather(cityName);
-      }
-      if (success) {
+      
+      if (!success.coords) {
         fetchByLatAndLon(success.coords.latitude, success.coords.longitude);
       }
+      else{
+        const answer = window.confirm("this website needs location, so open GPS for show your current location weather data");
+        console.log(answer);
+        if(answer){
+          sto = setTimeout(()=>{fetchByLatAndLon(success.coords.latitude, success.coords.longitude);},1000)
+        }else{
+          fetchToDayWeather();
+        }
+      }
     });
+
+
+    return ()=>{clearTimeout(sto)};
   }, []);
 
   //search handler
@@ -94,7 +106,7 @@ function App() {
       />
 
       {loading && !error ? (
-          <CustomCircularProgress />
+        <CustomCircularProgress />
       ) : (
         <Box sx={{ zIndex: 1 }}>
           <CustomContainer matches={sizes}>
