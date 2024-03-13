@@ -84,7 +84,7 @@ function App() {
           fetchToDayWeather();
         }
       }
-    }, alert("not allow"));
+    }, ()=>alert("not allow"));
 
 
     return ()=>{clearTimeout(sto)};
