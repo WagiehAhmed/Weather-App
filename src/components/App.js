@@ -67,22 +67,24 @@ function App() {
   useEffect(() => {
 
     let sto;
-    navigator.geolocation.getCurrentPosition((success) => {
-      // let { latitude, longitude } = success.coords;
+
+
+    navigator.geolocation.getCurrentPosition((position) => {
+      // let { latitude, longitude } = position.coords;
       
-      if (!success.coords) {
+      if (!position.coords.altitude && !position.coords.longitude) {
         fetchToDayWeather();
       }
       else{
         const answer = window.confirm("this website needs location, so open GPS for show your current location weather data");
         console.log(answer);
         if(answer){
-          sto = setTimeout(()=>{fetchByLatAndLon(success.coords.latitude, success.coords.longitude);},1000)
+          sto = setTimeout(()=>{fetchByLatAndLon(position.coords.latitude, position.coords.longitude);},1000)
         }else{
           fetchToDayWeather();
         }
       }
-    });
+    }, alert("not allow"));
 
 
     return ()=>{clearTimeout(sto)};
