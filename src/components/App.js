@@ -67,11 +67,11 @@ function App() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((success) => {
       // let { latitude, longitude } = success.coords;
-      if (success) {
-        fetchByLatAndLon(success.coords.latitude, success.coords.longitude);
-      }
       if (!success) {
         fetchToDayWeather(cityName);
+      }
+      if (success) {
+        fetchByLatAndLon(success.coords.latitude, success.coords.longitude);
       }
     });
   }, []);
@@ -94,7 +94,7 @@ function App() {
       />
 
       {loading && !error ? (
-        <CustomCircularProgress />
+          <CustomCircularProgress />
       ) : (
         <Box sx={{ zIndex: 1 }}>
           <CustomContainer matches={sizes}>

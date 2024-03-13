@@ -16,16 +16,17 @@ import {
 
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
+  position:"relative",
   minHeight: "100dvh",
   display: "flex",
   flexDirection: "column",
+
   backgroundImage: "url(./images/background2.jpg)",
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
+  // border:"2px solid red",
 
-  // backgroundColor: `${theme.palette.lightBlue.main}`,
-  // border: "2px solid red",
 
   "&:before": {
     content: "''",
@@ -33,7 +34,7 @@ export const CustomBox = styled(Box)(() => ({
     inset: "0px 0px 0px 0px",
     width: "100%",
     height: "100%",
-    backgroundColor: "rgba(10,100,250,0.25)",
+    backgroundColor: "rgba(25,50,250,0.25)",
   },
 
 }));
@@ -327,13 +328,10 @@ export const Title = styled(Typography)(() => ({
 
 
 export const CustomCircularProgress = styled(CircularProgress)(() => ({
-  width: "fit-content",
   position:"absolute",
   top:"50%",
   left:"50%",
-  transform:"translate( -50%, -50%)",
-  alignSelf: "center",
-  margin: "5px",
+  translate:"-50% -50%",
   color: "rgba(200,10,200,0.5)",
 }));
 

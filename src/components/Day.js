@@ -23,8 +23,8 @@ const Day = ({ item }) => {
           <Typography>{Math.floor(item.temp.min - 273.15)}&#8451;</Typography>
         </Stack>
         <Stack sx={{margin:"0px 5px"}}>
-          <Typography>{item.weather[0].main}</Typography>
-          <Typography>{item.wind_speed} m/s</Typography>
+          <Typography sx={{textAlign:"center"}}>{item.weather[0].main}</Typography>
+          <Typography sx={{textAlign:"center"}}>{item.wind_speed} m/s</Typography>
         </Stack>
       </DayDetails>
     </DayPaper>
