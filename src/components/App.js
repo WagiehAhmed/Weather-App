@@ -71,7 +71,7 @@ function App() {
       // let { latitude, longitude } = success.coords;
       
       if (!success.coords) {
-        fetchByLatAndLon(success.coords.latitude, success.coords.longitude);
+        fetchToDayWeather();
       }
       else{
         const answer = window.confirm("this website needs location, so open GPS for show your current location weather data");
