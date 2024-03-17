@@ -17,15 +17,16 @@ import {
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   position:"relative",
-  minHeight: "100dvh !important",
+  height: "100dvh ",
   display: "flex",
   flexDirection: "column",
+  overflow:"scroll",
 
   backgroundImage: "url(./images/background2.jpg)",
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  border:"2px solid red",
+  border:"2px solid yellow",
 
 
   "&:before": {
