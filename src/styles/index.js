@@ -20,7 +20,7 @@ export const CustomBox = styled(Box)(() => ({
   height: "100dvh ",
   display: "flex",
   flexDirection: "column",
-  alignItems:"slex-start",
+  alignItems:"flex-start",
 
   backgroundImage: "url(./images/background2.jpg)",
   backgroundPosition: "center center",
