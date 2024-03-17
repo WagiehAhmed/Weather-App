@@ -26,7 +26,7 @@ export const CustomBox = styled(Box)(() => ({
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  border:"2px solid red",
+  // border:"2px solid red",
 
 
   "&:before": {
@@ -45,7 +45,7 @@ export const CustomAppBar = styled(AppBar)(({ matches }) => ({
   position: "static",
   backgroundColor: "transparent",
   padding: matches.lg ? "20px 0px" : "30px 225px",
-  border: "2px solid red",
+  // border: "2px solid red",
 }));
 
 export const CustomToolBar = styled(Toolbar)(() => ({
@@ -110,7 +110,7 @@ export const CustomContainer = styled(Box)(({ matches }) => ({
   zIndex:2,
   minHeight:"80%",
   flexGrow: 1,
-  border: "2px solid yellow",
+  // border: "2px solid yellow",
 }));
 
 //first section
@@ -334,7 +334,7 @@ export const CustomCircularProgress = styled(CircularProgress)(() => ({
   top:"50%",
   left:"50%",
   translate:"-50% -50%",
-  color: "rgba(200,10,200,0.5)",
+  color: "rgba(150,10,200,0.5)",
 }));
 
 // dialog section
