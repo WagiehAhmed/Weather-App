@@ -74,12 +74,16 @@ function App() {
         }
       },
       () => {
-        window.alert(
+        const answer = window.confirm(
           "this website needs location, so open GPS for show your current location weather data"
         );
+        if(!answer){
+          fetchToDayWeather();
+        }
       }
     );
 
+    // return ()=>{clearTimeout(sto)};
   }, []);
 
   //search handler
