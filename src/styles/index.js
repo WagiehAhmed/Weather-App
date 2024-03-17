@@ -17,10 +17,10 @@ import {
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   position:"relative",
+  minHeight: "99dvh ",
   height: "100dvh ",
   display: "flex",
   flexDirection: "column",
-  alignItems:"flex-start",
 
   backgroundImage: "url(./images/background2.jpg)",
   backgroundPosition: "center center",
@@ -108,7 +108,7 @@ export const CustomContainer = styled(Box)(({ matches }) => ({
   boxSizing: "border-box",
   marginInline: matches.lg ? "0px" : "250px",
   zIndex:2,
-  minHeight:"80dvh",
+  minHeight:"80%",
   flexGrow: 1,
   border: "2px solid yellow",
 }));
