@@ -69,9 +69,10 @@ function App() {
       (position) => {
         if (position.coords.latitude && position.coords.longitude) {
           fetchByLatAndLon(position.coords.latitude, position.coords.longitude);
-        } else {
-          fetchToDayWeather();
-        }
+        } 
+        // else {
+        //   fetchToDayWeather();
+        // }
       },
       () => {
         const answer = window.confirm(

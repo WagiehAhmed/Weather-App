@@ -26,7 +26,7 @@ export const CustomBox = styled(Box)(() => ({
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  border:"2px solid yellow",
+  // border:"2px solid yellow",
 
 
   "&:before": {
