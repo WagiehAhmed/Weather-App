@@ -17,7 +17,7 @@ import {
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   position:"relative",
-  minHeight: "100dvh ",
+  height: "100dvh ",
   display: "flex",
   flexDirection: "column",
 

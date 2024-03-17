@@ -88,19 +88,19 @@ const MainAppBar = ({ searchHandler, cityName, setCityName, matches }) => {
           </CustomIconButtom>
 
           {/*language section */}
-          {i18n.language === "ar" ? (
-            <CustomIconButtom
-              onClick={() => i18n.changeLanguage("en")}
-              matches={matches}
-            >
-              <Typography color="primary" variant="button">EN</Typography>
-            </CustomIconButtom>
-          ) : (
+          {i18n.language === "en" ? (
             <CustomIconButtom
               onClick={() => i18n.changeLanguage("ar")}
               matches={matches}
             >
               <Typography color="primary" variant="button">AR</Typography>
+            </CustomIconButtom>
+          ) : (
+            <CustomIconButtom
+              onClick={() => i18n.changeLanguage("en")}
+              matches={matches}
+            >
+              <Typography color="primary" variant="button">EN</Typography>
             </CustomIconButtom>
           )}
         </Box>
