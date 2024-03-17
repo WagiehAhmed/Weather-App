@@ -17,7 +17,7 @@ import {
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   position:"relative",
-  minHeight: "100vh",
+  minHeight: "100dvh",
   display: "flex",
   flexDirection: "column",
 
@@ -25,7 +25,7 @@ export const CustomBox = styled(Box)(() => ({
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  border:"2px solid green",
+  border:"2px solid red",
 
 
   "&:before": {

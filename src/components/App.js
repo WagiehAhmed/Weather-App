@@ -65,29 +65,21 @@ function App() {
 
   // first time
   useEffect(() => {
-
-    let sto;
-
-
-    navigator.geolocation.getCurrentPosition((position) => {
-      // let { latitude, longitude } = position.coords;
-      
-      if (!position.coords.altitude && !position.coords.longitude) {
-        fetchToDayWeather();
-      }
-      else{
-        const answer = window.confirm("this website needs location, so open GPS for show your current location weather data");
-        console.log(answer);
-        if(answer){
-          sto = setTimeout(()=>{fetchByLatAndLon(position.coords.latitude, position.coords.longitude);},1000)
-        }else{
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        if (position.coords.latitude && position.coords.longitude) {
+          fetchByLatAndLon(position.coords.latitude, position.coords.longitude);
+        } else {
           fetchToDayWeather();
         }
+      },
+      () => {
+        window.alert(
+          "this website needs location, so open GPS for show your current location weather data"
+        );
       }
-    }, ()=>alert("not allow"));
+    );
 
-
-    return ()=>{clearTimeout(sto)};
   }, []);
 
   //search handler
