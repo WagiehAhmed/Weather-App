@@ -69,7 +69,7 @@ function App() {
       (position) => {
         if (position.coords.latitude && position.coords.longitude) {
           fetchByLatAndLon(position.coords.latitude, position.coords.longitude);
-        } 
+        }
         // else {
         //   fetchToDayWeather();
         // }
@@ -78,7 +78,7 @@ function App() {
         const answer = window.confirm(
           "this website needs location, so open GPS for show your current location weather data"
         );
-        if(!answer){
+        if (!answer) {
           fetchToDayWeather();
         }
       }
@@ -95,18 +95,17 @@ function App() {
     // console.log(nextSevenDaysWeather);
   };
 
-  return (
-    <CustomBox>
-      <MainAppBar
-        searchHandler={searchHandler}
-        cityName={cityName}
-        setCityName={setCityName}
-        matches={sizes}
-      />
-
-      {loading && !error ? (
-        <CustomCircularProgress />
-      ) : (
+  if (loading && !error) {
+    return <CustomCircularProgress />;
+  } else {
+    return (
+      <CustomBox>
+        <MainAppBar
+          searchHandler={searchHandler}
+          cityName={cityName}
+          setCityName={setCityName}
+          matches={sizes}
+        />
         <Box sx={{ zIndex: 1 }}>
           <CustomContainer matches={sizes}>
             <FirstSection matches={sizes}>
@@ -238,9 +237,9 @@ function App() {
             </SecondSection>
           </CustomContainer>
         </Box>
-      )}
-    </CustomBox>
-  );
+      </CustomBox>
+    );
+  }
 }
 
 export default App;
