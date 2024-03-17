@@ -17,16 +17,15 @@ import {
 export const CustomBox = styled(Box)(() => ({
   boxSizing: "border-box",
   position:"relative",
-  height: "100dvh ",
+  minHeight: "100dvh ",
   display: "flex",
   flexDirection: "column",
-  overflow:"scroll",
 
   backgroundImage: "url(./images/background2.jpg)",
   backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  // border:"2px solid yellow",
+  border:"2px solid red",
 
 
   "&:before": {
@@ -45,7 +44,7 @@ export const CustomAppBar = styled(AppBar)(({ matches }) => ({
   position: "static",
   backgroundColor: "transparent",
   padding: matches.lg ? "20px 0px" : "30px 225px",
-  // border: "2px solid red",
+  border: "2px solid red",
 }));
 
 export const CustomToolBar = styled(Toolbar)(() => ({
@@ -106,10 +105,11 @@ export const SearchTextField = styled(TextField)(() => ({
 // main section
 export const CustomContainer = styled(Box)(({ matches }) => ({
   boxSizing: "border-box",
-  margin: matches.lg ? "0px 0px" : "0px 250px",
-  flexGrow: 1,
+  marginInline: matches.lg ? "0px" : "250px",
   zIndex:2,
-  // border: "2px solid yellow",
+  minHeight:"80dvh",
+  flexGrow: 1,
+  border: "2px solid yellow",
 }));
 
 //first section

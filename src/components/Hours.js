@@ -21,7 +21,7 @@ const Hours = ({ hours }) => {
     dots: false,
     arrows: false,
     infinite: false,
-    speed: 500,
+    speed: 600,
     rtl: dir === "rtl" ? true : false,
     slidesToShow: 6,
     slidesToScroll: 6,
@@ -30,19 +30,19 @@ const Hours = ({ hours }) => {
       {
         breakpoint: 1300,
         settings: {
+          initialSlide: 0,
           slidesToShow: 5,
           slidesToScroll: 5,
           infinite: false,
-          initialSlide: 0,
         },
       },
       {
         breakpoint: 1024,
         settings: {
+          initialSlide: 0,
           slidesToShow: 4,
           slidesToScroll: 4,
           infinite: false,
-          initialSlide: 0,
         },
       },
       {
@@ -57,17 +57,17 @@ const Hours = ({ hours }) => {
       {
         breakpoint: 480,
         settings: {
+          initialSlide: 0,
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: false,
-          initialSlide: 0,
         },
       },
     ],
   };
 
   return (
-    <Box>
+    <Box sx={{direction:{dir}}}>
       <Title>{t("toDayHoursWeather")}</Title>
       <Slider {...settings}>
         {hours.map((item) => (

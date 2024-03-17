@@ -12,6 +12,7 @@ const Days = ({ days }) => {
   var dir;
   useEffect(() => {
     dir = i18n.dir(i18n.language);
+    console.log(dir)
   }, [i18n, i18n.language]);
   //slider settings
   var settings = {
@@ -64,7 +65,7 @@ const Days = ({ days }) => {
   };
 
   return (
-    <Box>
+    <Box sx={{direction:{dir}}}>
       <Title>{t("nextEightDayWeather")}</Title>
       <Slider {...settings}>
         {days.map((item) => (
